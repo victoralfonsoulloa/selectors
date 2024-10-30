@@ -15,6 +15,14 @@
             li.my-list {
                 background-color: orange;
             }
+
+            li.new-list, div#new-div {
+                background-color: blue;
+            }
+
+            div.grandkids li {
+                background-color: red;
+            }
         </style>
     </head>
     <body>
@@ -27,6 +35,7 @@
                 <li><a href="#id">id</a></li>
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
+                <li><a href="#descendant">Descendant</a></li>
             </ul>
         </nav> 
     </header>           
@@ -64,6 +73,45 @@
                     <li class="my-list">I'm in a li with a class of my-list</li>
                     <li class="my-list">I'm in a li with a class of my-list</li>
                     <li class="my-list">I'm in a li with a class of my-list</li>
+                </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="compound">Compound</a></legend>
+            <p>Compound selectors allow multiple selector blocks separated by commas</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>li.new-list, div#new-div {
+    background-color:blue;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div>
+                <ul>
+                    <li class="new-list">I'm in a li with a class of new-list</li>
+                    <li class="new-list">I'm in a li with a class of new-list</li>
+                    <li class="new-list">I'm in a li with a class of new-list</li>
+                </ul>
+            </div>
+            <div id="new-div">Inside new-div</div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="descendant">Descendant</a></legend>
+            <p>Descendant selectors let us access elements at any depth within the current element</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>div.grandkids li {
+    background-color:red;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div class="grandkids">
+                <ul>
+                    <li class="new-list">I'm in a li with a class of new-list</li>
+                    <li class="new-list">I'm in a li with a class of new-list</li>
+                    <li class="new-list">I'm in a li with a class of new-list</li>
                 </ul>
             </div>
         </fieldset>
